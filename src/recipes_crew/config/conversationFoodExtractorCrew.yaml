@@ -1,0 +1,6 @@
+crew:
+  name: "Conversation Food Extractor Crew"
+  agents:
+    - id: conversation_food_extractor_chef
+  tasks:
+    - id: conversation_food_extractor_extract_food_info_task

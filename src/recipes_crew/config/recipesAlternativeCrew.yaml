@@ -1,0 +1,10 @@
+crew:
+  name: "Recipe Alternative Crew"
+  agents:
+    - id: recipe_alternative_crew_recipe_analyzer
+    - id: recipe_alternative_crew_health_optimizer
+    - id: recipe_alternative_crew_alternative_generator
+  tasks:
+    - id: recipe_alternative_crew_analyze_macronutrients_task
+    - id: recipe_alternative_crew_suggest_healthy_alternative_task
+    - id: recipe_alternative_crew_generate_alternative_task

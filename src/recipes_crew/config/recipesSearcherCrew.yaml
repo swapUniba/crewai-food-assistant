@@ -1,0 +1,10 @@
+crew:
+  name: "Recipes Searcher Crew"
+  agents:
+    - id: recipes_searcher_crew_recipes_researcher
+    - id: recipes_searcher_crew_recipes_translator
+  tasks:
+    - id: recipes_searcher_crew_research_recipe_task
+      #tools: 
+        #- id: search_recipe
+    - id: recipes_searcher_crew_translate_recipe_task

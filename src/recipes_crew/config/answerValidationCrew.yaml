@@ -1,0 +1,7 @@
+crew:
+  name: "Answer Validation Crew"
+  agents:
+    - id: answer_validation_agent
+  tasks:
+    - id: validate_answer_task
+

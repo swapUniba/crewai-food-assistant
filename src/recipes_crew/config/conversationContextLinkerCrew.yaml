@@ -1,0 +1,6 @@
+crew:
+  name: "Conversation Context Linker Crew"
+  agents:
+    - id: conversation_context_linker_agent
+  tasks:
+    - id: conversation_context_linker_detect_reference_task

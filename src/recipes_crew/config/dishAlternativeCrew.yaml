@@ -1,0 +1,10 @@
+crew:
+  name: "Dish Alternative Crew"
+  agents:
+    - id: dish_alternative_crew_dish_analyzer
+    - id: dish_alternative_crew_health_optimizer
+    - id: dish_alternative_crew_alternative_suggester
+  tasks:
+    - id: dish_alternative_crew_analyze_dish_task
+    - id: dish_alternative_crew_suggest_healthy_alternative_task
+    - id: dish_alternative_crew_generate_alternative_task

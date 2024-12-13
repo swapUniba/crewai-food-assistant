@@ -1,0 +1,6 @@
+crew:
+  name: "Dispatcher Crew"
+  agents:
+    - id: dispatcher_crew_help_desk_technician
+  tasks:
+    - id: dispatcher_crew_get_label_task

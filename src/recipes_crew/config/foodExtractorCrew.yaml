@@ -1,0 +1,6 @@
+crew:
+  name: "Food Extractor Crew"
+  agents:
+    - id: food_extractor_chef
+  tasks:
+    - id: food_extractor_extract_food_info_task

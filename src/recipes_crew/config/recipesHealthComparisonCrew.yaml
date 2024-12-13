@@ -1,0 +1,10 @@
+crew:
+  name: "Health Recipe Comparison Crew"
+  agents:
+    - id: health_recipe_comparison_crew_recipe_analyzer
+    - id: health_recipe_comparison_crew_health_score_calculator
+    - id: health_recipe_comparison_crew_recipe_suggestion
+  tasks:
+    - id: health_recipe_comparison_crew_analyze_recipe_task
+    - id: health_recipe_comparison_crew_calculate_health_score_task
+    - id: health_recipe_comparison_crew_suggest_healthier_recipe_task

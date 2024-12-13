@@ -1,0 +1,8 @@
+crew:
+  name: "Carbon Footprint Checker Crew"
+  agents:
+    - id: carbon_footprint_checker_crew_recipe_analyzer
+    - id: carbon_footprint_checker_crew_footprint_calculator
+  tasks:
+    - id: carbon_footprint_checker_crew_analyze_recipe_task
+    - id: carbon_footprint_checker_crew_calculate_footprint_task

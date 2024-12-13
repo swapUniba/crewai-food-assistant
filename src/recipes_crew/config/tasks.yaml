@@ -1,0 +1,205 @@
+#Dispatcher Crew
+
+dispatcher_crew_get_label_task:
+  description: >
+    Given the user's request '{user_answer}', you need to determine which "description" value in the JSON {tasks_list} most closely matches the user's request and return the correspondent value in "label".
+  expected_output: >
+    The right value of "label" that correspond to the user's request, the answer MUST contain just the label in string format
+
+
+#Food Extractor Crew
+
+food_extractor_extract_food_info_task:
+  description: >
+    Given the user's message '{user_answer}', extract any ingredients or recipe names mentioned. Return them as a comma-separated list. 
+    If there is no food information, you MUST return just the charter 0.
+  expected_output: >
+    A comma-separated list of ingredients or recipe names mentioned in the user's message. If none are found, return an empty string.
+
+
+#Conversation Extractor Crew
+
+conversation_food_extractor_extract_food_info_task:
+  description: >
+    Given the conversation '{conversation_text}', extract any ingredients or recipe names mentioned.
+    Return them as a comma-separated list.
+    If there is no food information, YOU MUST return just the character 0.
+  expected_output: >
+    A comma-separated list of ingredients or recipe names mentioned in the conversation.
+    If none are found, return just the character '0'.
+
+
+#Recipes Searcher Crew
+
+recipes_searcher_crew_research_recipe_task:
+  description: >
+    Given the ingredients {ingredients} and, if available here: '{user_preferences}' the user’s preferences, 
+    recognize their language and translate them into English. 
+    Next, search for a recipe that includes 
+    them while considering the user’s preferences. 
+    The goal is to find a comprehensive recipe that provides all the
+    necessary information for a person to successfully prepare a dish using these ingredients. 
+    If you have a tool, use it, 
+    but if there is no answer initially, use your knowledge to complete the task.
+    Explain why you decide to porpose this recipe.
+  expected_output: >
+    A detailed and clear list of steps to follow in order to prepare the recipe, 
+    including all required ingredients, measurements, and cooking instructions.
+
+
+recipes_searcher_crew_translate_recipe_task:
+  description: >
+    Analyze the structure and language of the provided recipe and translate it into Italian. 
+    Ensure the translation retains all original details and instructions, 
+    making it clear and understandable for Italian speakers.
+  expected_output: >
+    A well-formatted list of steps written in Italian, 
+    preserving the full detail and clarity of the original recipe, 
+    with no omissions or alterations to the instructions.
+
+
+
+# Carbon Footprint Checker Crew
+
+carbon_footprint_checker_crew_analyze_recipe_task:
+  description: >
+    Analyze the provided recipe {recipe}, taking into account the user’s preferences '{user_preferences}' if available. 
+    Break down the recipe’s ingredients into categories such as plant-based, animal-based, processed, 
+    and local or imported. Identify any environmental factors that may influence the carbon footprint, 
+    such as whether ingredients are seasonal or commonly transported over long distances.
+  expected_output: >
+    A detailed analysis of the recipe, focusing on each ingredient's origin, type (plant-based, animal-based, etc.), 
+    and any factors that may contribute to a higher or lower carbon footprint (e.g., local vs. imported, seasonal availability). 
+    The analysis should provide a clear understanding of the recipe's environmental impact factors.
+
+carbon_footprint_checker_crew_calculate_footprint_task:
+  description: >
+    Based on the analysis of the provided recipe, calculate the total carbon footprint. 
+    Take into account factors like production methods, transportation distance, and energy required for cooking. 
+    The final carbon footprint report should be delivered in Italian.
+  expected_output: >
+    A detailed carbon footprint report for the recipe, written in Italian, including the estimated emissions for each ingredient and the overall carbon footprint of the entire recipe. 
+    The report should highlight the key contributors to the carbon footprint and provide suggestions, in Italian, for reducing the environmental impact.
+
+
+
+# Health Recipe Comparison Crew
+
+health_recipe_comparison_crew_analyze_recipe_task:
+  description: >
+    Analyze the two provided recipes: {recipes}. Break down each recipe's nutritional components, including calories, proteins, fats, carbohydrates, vitamins, and minerals. 
+    Identify any ingredients in both recipes that may have negative health impacts, such as high levels of processed sugars, unhealthy fats, or additives. 
+    Compare the balance of macronutrients and micronutrients between the two recipes and identify key differences in their health profiles.
+  expected_output: >
+    A detailed nutritional analysis of both recipes, focusing on the breakdown of macronutrients (fats, proteins, carbohydrates) and micronutrients (vitamins, minerals). 
+    Identify ingredients in both recipes that could be harmful in excess (e.g., high sugar or trans fats) and explain their potential effects on health. 
+    The analysis should provide a clear comparison of the health profiles of the two recipes, highlighting any significant differences in their nutritional content.
+
+health_recipe_comparison_crew_calculate_health_score_task:
+  description: >
+    Based on the nutritional analysis of the two provided recipes, calculate an overall health score for each. 
+    The score should be based on established health guidelines, considering factors such as calorie density, nutrient quality, and the presence of processed or unhealthy ingredients. 
+    Compare the health scores of both recipes and highlight the strengths and weaknesses of each one.
+  expected_output: >
+    A comprehensive health score for both recipes, along with a detailed explanation of how each score was calculated. 
+    The report should highlight the most important health factors, such as the balance of macronutrients, presence of unhealthy elements, and overall caloric impact. 
+    The scores should allow users to easily compare the two recipes and understand which is healthier overall.
+
+health_recipe_comparison_crew_suggest_healthier_recipe_task:
+  description: >
+    Analyze which recipe offers a healthier option based on the calculated scores and the user’s preferences '{user_preferences}' if available. 
+    Provide a clear recommendation of which recipe is healthier, and offer reasoning to explain the choice. 
+    If one recipe is less healthy, suggest possible ingredient substitutions that could improve its health score, 
+    making it a better option. Explain everything in Italian.
+  expected_output: >
+    A comparison report that clearly recommends the healthier recipe, along with detailed reasoning. 
+    The report should explain why one recipe is healthier, focusing on key factors such as nutrient density, harmful ingredients, or caloric content. 
+    If applicable, suggest specific ingredient substitutions for the less healthy recipe to improve its overall health score.
+    The final result must be in italian.
+
+
+
+# Recipe Alternative Crew
+
+recipe_alternative_crew_analyze_macronutrients_task:
+  description: >
+    Analyze the macronutrient breakdown of the given recipe: {recipe}. Identify the primary sources of protein, fat, and carbohydrates, and note any additional nutritional elements such as fiber or vitamins. 
+    Pay close attention to unhealthy ingredients like processed sugars, saturated fats, or refined carbohydrates.
+  expected_output: >
+    A complete analysis of the recipe’s macronutrient profile, including the breakdown of proteins, fats, and carbohydrates. 
+    Highlight any unhealthy elements (e.g., excessive sugars, trans fats) and note the balance of the macronutrients. 
+    This report will serve as the basis for generating a healthier alternative recipe.
+
+
+recipe_alternative_crew_suggest_healthy_alternative_task:
+  description: >
+    Based on the macronutrient analysis of the original recipe and the user’s preferences '{user_preferences}' if available, suggest a healthier 
+    version of the recipe that maintains the same macronutrient ratio. Focus on replacing unhealthy elements such as 
+    refined sugars or unhealthy fats with healthier alternatives, like using whole grains or lean protein sources.
+    Explain why you decide to porpose this recipe.
+  expected_output: >
+    A detailed description of potential ingredient substitutions to make the recipe healthier. 
+    The suggestion should maintain the original macronutrient balance (e.g., if the user needs protein, the alternative should still provide ample protein) while improving the overall health profile. 
+    Provide an explanation for each substitution, such as why a certain fat or carbohydrate is healthier.
+
+
+recipe_alternative_crew_generate_alternative_task:
+  description: >
+    Generate a complete alternative recipe based on the suggested healthier substitutions and the user’s preferences '{user_preferences}' if available. 
+    Ensure the new recipe retains the user’s macronutrient goals while offering a healthier option. 
+    The new recipe should aim to be nutritionally superior to the original while still being tasty and satisfying. Explain everything in Italian.
+    Explain why you decide to porpose this recipe.
+  expected_output: >
+    A new recipe that is a healthier alternative to the original, maintaining a similar macronutrient profile but using healthier ingredients. 
+    Provide a step-by-step guide to preparing the new recipe, with explanations of how each substitution contributes to its improved health profile.
+    The final result must be in italian.
+
+
+# Dish Alternative Crew
+
+dish_alternative_crew_analyze_dish_task:
+  description: >
+    Analyze the given dish: {dish}. Identify its main ingredients, cuisine type, and any potential health concerns or dietary restrictions. Note any unhealthy elements such as high levels of saturated fats, sugars, or processed ingredients.
+  expected_output: >
+    A concise analysis of the dish's main components and any health considerations. This will serve as the basis for suggesting healthier alternative dishes.
+
+dish_alternative_crew_suggest_healthy_alternative_task:
+  description: >
+    Based on the analysis of the original dish and the user’s preferences '{user_preferences}' if available, 
+    suggest healthier alternative dishes that maintain a similar flavor profile or satisfy the same cravings. 
+    Focus on options that reduce unhealthy elements while still being enjoyable.
+    Explain why you decide to porpose this recipe.
+  expected_output: >
+    A list of alternative dishes with brief descriptions. Each suggestion should highlight how it is a healthier option compared to the original dish, mentioning key differences in ingredients or preparation methods.
+
+dish_alternative_crew_generate_alternative_task:
+  description: >
+    Provide details about the suggested alternative dishes, including their main ingredients and why they are healthier choices. Ensure the alternatives align with the user's preferences and nutritional goals.
+    Explain everything in Italian.
+  expected_output: >
+    A brief overview of each alternative dish in Italian, including its name, main ingredients, and why it is a healthier option. The final result must be in Italian.
+
+
+
+# Answer Validation Crew
+
+validate_answer_task:
+  description: >
+    Question done: {question_done},
+    Answer: {user_answer},
+    If the answer is not completly wrong return 1, please you MUST NOT BE RESTICTIVE!
+    Otherwise if it is completely wrong explain, in italian, why the answer is wrong and try to give clues in italian 
+    to help user to give a correct answer
+  expected_output: >
+    "1" if the answer at the question is not completly wrong , else an italian explanation.
+
+
+
+#Conversation Context Linker Crew
+
+conversation_context_linker_detect_reference_task:
+  description: >
+    Given the previous message '{previous_message}' and the current message '{current_message}', determine if the current message refers to the previous one. 
+    Return "1" if it references the previous message, or "0" if it does not.
+  expected_output: >
+    "1" if the current message references the previous message, or "0" if it does not.
